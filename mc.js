@@ -30,7 +30,7 @@ function SetupStream(stream){
         chunks.push(e.data);
     }
     recorder.onstop = e =>{
-        const blob = new Blob(chunks, { type: "audio/webm" });
+        const blob = new Blob(chunks, {type: "audio/mp3; codecs=opus"})
         chunks = [];
         const audioURL = window.URL.createObjectURL(blob);
         playback.src = audioURL;
